@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  calculator-service:
+    build:
+      context: ./calculator-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - addition-service
+      - subtraction-service
+      - multiplication-service
+      - division-service
+      - square-root-service
+      - percentage-service
+      - rounding-service
+      - power-service
+
+  addition-service:
+    build:
+      context: ./addition-service
+    expose:
+      - "8080"
+
+  subtraction-service:
+    build:
+      context: ./subtraction-service
+    expose:
+      - "8080"
+
+  multiplication-service:
+    build:
+      context: ./multiplication-service
+    expose:
+      - "8080"
+
+  division-service:
+    build:
+      context: ./division-service
+    expose:
+      - "8080"
+
+  square-root-service:
+    build:
+      context: ./square-root-service
+    expose:
+      - "8080"
+
+  percentage-service:
+    build:
+      context: ./percentage-service
+    expose:
+      - "8080"
+
+  rounding-service:
+    build:
+      context: ./rounding-service
+    expose:
+      - "8080"
+
+  power-service:
+    build:
+      context: ./power-service
+    expose:
+      - "8080"
